@@ -23,7 +23,7 @@ This is currently in the early stages of development and is not yet ready for pr
 Swarm.js makes it easy to define agents, assign them tasks, and manage interactions between them. Below is a simple example demonstrating how to create and orchestrate two agents.
 
 ```javascript
-const { Swarm, Agent } from 'node-swarmjs';
+import { Swarm, Agent } from 'node-swarmjs';
 
  const client = new Swarm({
     apiKey: process.env.OPENAI_API_KEY,
@@ -64,7 +64,7 @@ const { Swarm, Agent } from 'node-swarmjs';
 ## Example with Anthropic
 
 ```javascript
-const { Swarm, Agent } = require('node-swarmjs');
+import { Swarm, Agent } from 'node-swarmjs';
 
 const client = new Swarm({
   apiKey: process.env.ANTHROPIC_API_KEY,
