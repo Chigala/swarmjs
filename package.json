@@ -1,0 +1,49 @@
+{
+  "name": "node-swarmjs",
+  "version": "0.0.1",
+  "description": "A framework for building AI Agents",
+  "keywords": [
+    "ai",
+    "agents",
+    "framework"
+  ],
+  "main": "dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "author": "Chigala Enyeazu",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chigala/swarmjs.git"
+  },
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "devDependencies": {
+    "@arethetypeswrong/cli": "^0.15.4",
+    "@changesets/cli": "^2.27.7",
+    "prettier": "^3.3.3",
+    "tsup": "^8.2.4",
+    "typescript": "^5.5.4",
+    "vitest": "^2.0.5"
+  },
+  "scripts": {
+    "build": "tsup ",
+    "ci": "npm run build && npm run check-format && npm run check-exports && npm run lint ",
+    "lint": "tsc",
+    "test": "vitest run",
+    "format": "prettier --write .",
+    "check-format": "prettier --check .",
+    "check-exports": "attw --pack .",
+    "local-release": "npm run ci && changeset version && changeset publish"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.29.0",
+    "openai": "^4.67.3"
+  }
+}
